@@ -18,14 +18,13 @@ The primary goals of this project were to:
 * Showcase skills in genomic data handling, feature engineering, and interpreting model insights in a biological context.
 
 ## Key Findings
-*(This section will be filled with actual results after model training and evaluation. For now, placeholders based on typical good performance are used.)*
 
-* **High Prediction Accuracy:** The trained CNN achieved a **Test Accuracy of [YOUR_TEST_ACCURACY]%** on unseen DNA sequences, indicating strong overall performance in classifying CTCF binding sites.
+* **High Prediction Accuracy:** The trained CNN achieved a **Test Accuracy of 91.19%** on unseen DNA sequences, indicating strong overall performance in classifying CTCF binding sites.
 * **Robust Classification Performance:**
-    * **Precision (0.8157):** When the model predicted a sequence as a CTCF binding site, it was correct over 81% of the time, demonstrating a good ability to minimize false positives.
-    * **Recall (0.6418):** The model successfully identified approximately 64% of all actual CTCF binding sites in the test set.
-    * **F1-Score (0.7184):** This balanced metric reflects a solid overall performance in identifying binding sites.
-    * **ROC AUC (0.8179):** The Receiver Operating Characteristic Area Under the Curve (ROC AUC) score of 0.8179 confirms the model's strong discriminative power between binding and non-binding sequences.
+    * **Precision (0.9124):** When the model predicted a sequence as a CTCF binding site, it was correct over 91% of the time, demonstrating a good ability to minimize false positives.
+    * **Recall (0.9111):** The model successfully identified approximately 91% of all actual CTCF binding sites in the test set.
+    * **F1-Score (0.9117):** This balanced metric reflects a great overall performance in identifying binding sites.
+    * **ROC AUC (0.9680):** The Receiver Operating Characteristic Area Under the Curve (ROC AUC) score of 0.9680 confirms the model's strong discriminative power between binding and non-binding sequences.
 * **Learned DNA Motifs:** Analysis of the first convolutional layer's filters revealed learned DNA sequence patterns (motifs). Several of these learned motifs visually resemble known CTCF binding consensus sequences, suggesting the model successfully identified biologically relevant features for prediction. (e.g., Motif 1: `TAGTAGGG` - *You can insert your best motif image here and describe it if it looks like the known CTCF motif, or if it's a novel pattern.*)
 
 ## Computational Environment Setup
@@ -119,5 +118,4 @@ Atharva Bandekar
 [LinkedIn](https://www.linkedin.com/in/atharva-bandekar/)
 
 ## Acknowledgements
-This project was developed with the extensive guidance and assistance of Google's Gemini large language model. Gemini provided step-by-step instructions for the analysis, troubleshooting support for complex bioinformatics challenges (including environment setup, data acquisition, and deep learning issues), explanations of underlying scientific and computational concepts, and assistance in structuring and generating Markdown code for project documentation. All execution, problem-solving, and learning were performed by Atharva Bandekar.
 
