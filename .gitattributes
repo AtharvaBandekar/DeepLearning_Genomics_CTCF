@@ -1,5 +1,1 @@
-*.fa filter=lfs diff=lfs merge=lfs -text
-*.fasta filter=lfs diff=lfs merge=lfs -text
-data/processed/*.fasta filter=lfs diff=lfs merge=lfs -text
-data/processed/negative_sequences.fasta filter=lfs diff=lfs merge=lfs -text
-data/processed/positive_sequences.fasta filter=lfs diff=lfs merge=lfs -text
+
