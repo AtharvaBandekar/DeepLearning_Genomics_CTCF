@@ -1,3 +1,4 @@
 data/raw/hg38.fa
 data/processed/negative_sequences.fasta
+.DS_Store
 
