@@ -3,12 +3,6 @@
 ## Project Overview
 This repository presents a deep learning project focused on predicting Transcription Factor Binding Sites (TFBSs) for the **CTCF** (CCCTC-binding factor) protein in the human genome. The project demonstrates the application of Convolutional Neural Networks (CNNs) to DNA sequence data, showcasing skills in genomic data acquisition, preprocessing, deep learning model development, evaluation, and interpretation.
 
-## Goals of this Project
-The primary goals of this project were to:
-* Build a deep learning model to accurately predict whether a given DNA sequence is a CTCF binding site (binary classification).
-* Gain hands-on experience with the entire deep learning pipeline in bioinformatics, from raw data to model interpretation.
-* Demonstrate proficiency in PyTorch for neural network development.
-* Showcase skills in genomic data handling, feature engineering, and interpreting model insights in a biological context.
 
 ## Key Findings
 
@@ -18,23 +12,7 @@ The primary goals of this project were to:
     * **Recall (0.9111):** The model successfully identified approximately 91% of all actual CTCF binding sites in the test set.
     * **F1-Score (0.9117):** This balanced metric reflects a great overall performance in identifying binding sites.
     * **ROC AUC (0.9680):** The Receiver Operating Characteristic Area Under the Curve (ROC AUC) score of 0.9680 confirms the model's strong discriminative power between binding and non-binding sequences.
-* **Learned DNA Motifs:** Analysis of the first convolutional layer's filters revealed learned DNA sequence patterns (motifs). Several of these learned motifs visually resemble known CTCF binding consensus sequences, suggesting the model successfully identified biologically relevant features for prediction. For example, Motif 1 (shown below) displays a strong preference for C and G bases, particularly a G-rich region towards the 3' end, which is consistent with known characteristics of CTCF binding sites.  
-
-## Computational Environment Setup
-* **Operating System:** macOS (Apple M4 chip, 16GB RAM).
-* **Conda:** Utilized Miniconda for environment management.
-    * Channels configured: `conda-forge`, `bioconda`, `defaults` (with strict priority).
-    * **`bioinfo_general` environment:** Python 3.9, `pytorch` (with MPS support), `numpy`, `scikit-learn`, `matplotlib`, `seaborn`, `bedtools`, `samtools`, `logomaker`.
-* **PyTorch:** Primary deep learning framework, leveraging Apple's Metal Performance Shaders (MPS) for GPU acceleration on the M4 chip.
-* **Development Environment:** VS Code for script development and integrated terminal execution.
-
-### **Key Troubleshooting Overcome**
-This project involved navigating several significant computational and data challenges:
-* **`bedtools getfasta -tab` Parsing:** Addressed the specific format of `bedtools getfasta` output (ID and sequence on one tab-separated line without `>`) by adjusting the custom `DNADataset` parser.
-* **`DataLoader` `TypeError`:** Resolved a `TypeError` related to `torch.utils.data.ConcatDataset` and `__getitem__` by refactoring `DNADataset` to load multiple FASTA files directly, bypassing `ConcatDataset`.
-* **Missing Python Packages:** Successfully installed `scikit-learn`, `matplotlib`, and `seaborn` to enable model evaluation and plotting.
-* **Resource Management:** Effectively managed 16GB RAM for deep learning tasks by optimizing batch sizes and leveraging MPS acceleration.
-* **GitHub Large File Limits:** Overcame GitHub's 100MB file size limit (and Git LFS 2GB limit) by carefully configuring `.gitignore` and `.gitattributes` to exclude the very large `hg38.fa` reference genome and the derived `negative_sequences.fasta` file, providing instructions for their local acquisition/regeneration instead.
+* **Learned DNA Motifs:** Analysis of the first convolutional layer's filters revealed learned DNA sequence patterns (motifs). Several of these learned motifs visually resemble known CTCF binding consensus sequences, suggesting the model successfully identified biologically relevant features for prediction.
 
 ## Data Acquisition
 * **CTCF ChIP-seq Narrow Peaks (Positive Examples):** Acquired `ENCFF356LIU.bed.gz` (unzipped to `ENCFF356LIU.bed`) from the ENCODE Project, representing validated CTCF binding sites in GM12878 cells (hg38 assembly).
